@@ -11,7 +11,7 @@ var app = express();
 app.set('view engine', 'ejs');
 
 //express static file middleware to access styles
-app.use(express.static('./assets'));
+app.use('/assets', express.static(__dirname + '/assets'));
 
 //fire controllers
 todoController(app);       //passing app instance of express to todoController
